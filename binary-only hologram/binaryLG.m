@@ -36,6 +36,10 @@ phase = angle(E);
 w = asin(abs(E)/max(max(abs(E))));
 binaryGrating = 0.5 + 0.5*sign(cos((2*pi)*plane/gratingPeriod + phase) - cos(w)); 
 
+%%% to inverse the hologram, which can move the hologram from on state of
+%%% the DMD to off state, make it easier for 4f system alignment.
+% binaryGrating = ~binaryGrating; 
+
 % Display: ----------------------------------------------------------------
 
 imshow(binaryGrating);
